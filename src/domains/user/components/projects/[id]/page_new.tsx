@@ -1,0 +1,1 @@
+// Legacy duplicate file intentionally removed. Use /user/projects/[projectId] as the canonical hub.

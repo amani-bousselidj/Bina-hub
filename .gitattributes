@@ -1,0 +1,16 @@
+# Protect critical files from accidental deletion
+PLATFORM_FEATURES_ROADMAP.md merge=ours
+UNIFIED_PLATFORM_COMPLETE.md merge=ours
+README.md merge=ours
+package.json merge=ours
+
+# Mark critical documentation files
+*.md linguist-documentation=true
+
+# Ensure line endings
+* text=auto
+*.js text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.json text eol=lf
+*.md text eol=lf

@@ -1,0 +1,5 @@
+"C:\Users\hp\BinnaCodes\binna\src\app\auth\layout.tsx"
+"C:\Users\hp\BinnaCodes\binna\src\app\auth\forgot-password\page.tsx"
+"C:\Users\hp\BinnaCodes\binna\src\app\auth\login\page.tsx"
+"C:\Users\hp\BinnaCodes\binna\src\app\auth\reset-password-confirm\page.tsx"
+"C:\Users\hp\BinnaCodes\binna\src\app\auth\signup\page.tsx"

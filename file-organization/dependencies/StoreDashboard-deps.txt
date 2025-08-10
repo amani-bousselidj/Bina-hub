@@ -1,0 +1,9 @@
+Dependencies for StoreDashboard (C:\Users\hp\BinnaCodes\binna\src\core\shared\components\ERPStoreDashboard.tsx):
+import { Card, LoadingSpinner } from '@/core/shared/components/ui';
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import { formatCurrency } from '@/core/shared/utils';
+import { formatNumber, formatCurrency, formatDate, formatPercentage } from '@/core/shared/utils/formatting';
+import ERPIntegrationServiceCore from '@/core/shared/services/erp-integration/service';
+import React, { useState, useEffect } from 'react';
+
+Potentially imported by:

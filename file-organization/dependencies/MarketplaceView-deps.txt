@@ -1,0 +1,16 @@
+Dependencies for MarketplaceView (C:\Users\hp\BinnaCodes\binna\src\domains\marketplace\components\MarketplaceView.tsx):
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { CartSidebar } from './CartSidebar';
+import { CategoryFilter } from './CategoryFilter';
+import { ProductGrid } from './ProductGrid';
+import { ProductSearch } from './ProductSearch';
+import { ShoppingBag, Filter, Search } from 'lucide-react';
+import { ShoppingCart } from './ShoppingCart';
+import { useAuth } from '@/core/shared/auth/AuthProvider';
+import { useCart } from '../../hooks/useCart';
+import { useMarketplace } from './MarketplaceProvider';
+import React, { useState, useEffect } from 'react';
+
+Potentially imported by:
+C:\Users\hp\BinnaCodes\binna\src\domains\public\marketplace\page.tsx

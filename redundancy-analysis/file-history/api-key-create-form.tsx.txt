@@ -1,0 +1,39 @@
+File History Analysis for: api-key-create-form.tsx
+
+Generated: 08/05/2025 08:30:28
+
+
+
+=== src/core\shared\components\api-key-create-form.tsx ===
+Git History:
+4690afe1 feat: Major UI restructuring and comprehensive fixes
+f47735cc ╪ز╪╣╪»┘è┘╪د╪ز ┘â╪ذ┘è╪▒╪ر ╪╣┘┘ë ╪ز╪╡┘à┘è┘à ╪د┘┘à┘╪╡╪ر ┘ê╪ص╪░┘ ╪د┘┘à┘┘╪د╪ز ╪د┘┘à┘â╪▒╪▒╪ر
+7599a8db ┘╪│╪«╪ر ╪ش╪»┘è╪»╪ر ╪ذ╪╣╪» ┘à╪╣╪د┘╪ش╪ر ╪د┘┘à╪┤┘â┘ & successful build ┘ê┘à╪╣╪د┘╪ش╪ر ╪د┘┘à╪┤╪د┘â┘ ╪ذ╪╣╪» ╪د╪╢╪د┘╪ر ┘â╪د┘╪ر ╪د┘╪«╪»┘à╪د╪ز ╪د┘╪«╪د╪╡╪ر ╪ذ╪د┘┘à╪ز╪د╪ش╪▒ ┘ê╪د╪│╪ز╪╣╪د╪»╪ر ╪╡┘╪ص╪ر ╪د┘┘à╪│╪ز╪«╪»┘à
+ff790f59 ╪ز╪ص╪│┘è┘╪د╪ز ┘â╪ذ┘è╪▒╪ر ┘┘┘à╪ز╪ش╪▒ ┘ê╪د╪╢╪د┘╪د╪ز ┘â╪س┘è╪▒╪ر
+c3f4b5cf ┘╪│╪«╪ر ╪ز┘à ╪ز┘┘é┘è╪ص┘ç╪د ┘ê╪ص╪░┘ ┘à╪╣ ╪ز╪ش┘à┘è╪╣ ╪د┘┘à┘┘╪د╪ز ┘ê╪ز┘ê╪ص┘è╪» ╪د┘┘à╪ش┘╪»╪د╪ز ┘┘┘à╪│╪ز╪«╪»┘à & ┘ê╪د┘┘à╪ز╪ش╪▒ ┘ê╪د┘╪ذ╪د┘â ╪ت╪ذ ┘ê ╪د┘╪╣╪د┘à
+
+Line count: 189
+
+Key imports:
+import { zodResolver } from "@hookform/resolvers/zod"
+import { Button, Heading, Input, Prompt, Text, toast } from "@medusajs/ui"
+import { useForm } from "react-hook-form"
+import { useTranslation } from "react-i18next"
+import * as zod from "zod"
+
+=== src/core\shared\components\api-key-create-form\api-key-create-form.tsx ===
+Git History:
+4690afe1 feat: Major UI restructuring and comprehensive fixes
+f47735cc ╪ز╪╣╪»┘è┘╪د╪ز ┘â╪ذ┘è╪▒╪ر ╪╣┘┘ë ╪ز╪╡┘à┘è┘à ╪د┘┘à┘╪╡╪ر ┘ê╪ص╪░┘ ╪د┘┘à┘┘╪د╪ز ╪د┘┘à┘â╪▒╪▒╪ر
+7599a8db ┘╪│╪«╪ر ╪ش╪»┘è╪»╪ر ╪ذ╪╣╪» ┘à╪╣╪د┘╪ش╪ر ╪د┘┘à╪┤┘â┘ & successful build ┘ê┘à╪╣╪د┘╪ش╪ر ╪د┘┘à╪┤╪د┘â┘ ╪ذ╪╣╪» ╪د╪╢╪د┘╪ر ┘â╪د┘╪ر ╪د┘╪«╪»┘à╪د╪ز ╪د┘╪«╪د╪╡╪ر ╪ذ╪د┘┘à╪ز╪د╪ش╪▒ ┘ê╪د╪│╪ز╪╣╪د╪»╪ر ╪╡┘╪ص╪ر ╪د┘┘à╪│╪ز╪«╪»┘à
+ff790f59 ╪ز╪ص╪│┘è┘╪د╪ز ┘â╪ذ┘è╪▒╪ر ┘┘┘à╪ز╪ش╪▒ ┘ê╪د╪╢╪د┘╪د╪ز ┘â╪س┘è╪▒╪ر
+c3f4b5cf ┘╪│╪«╪ر ╪ز┘à ╪ز┘┘é┘è╪ص┘ç╪د ┘ê╪ص╪░┘ ┘à╪╣ ╪ز╪ش┘à┘è╪╣ ╪د┘┘à┘┘╪د╪ز ┘ê╪ز┘ê╪ص┘è╪» ╪د┘┘à╪ش┘╪»╪د╪ز ┘┘┘à╪│╪ز╪«╪»┘à & ┘ê╪د┘┘à╪ز╪ش╪▒ ┘ê╪د┘╪ذ╪د┘â ╪ت╪ذ ┘ê ╪د┘╪╣╪د┘à
+
+Line count: 189
+
+Key imports:
+import { zodResolver } from "@hookform/resolvers/zod"
+import { Button, Heading, Input, Prompt, Text, toast } from "@medusajs/ui"
+import { useForm } from "react-hook-form"
+import { useTranslation } from "react-i18next"
+import * as zod from "zod"

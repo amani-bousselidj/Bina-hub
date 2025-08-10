@@ -1,0 +1,4 @@
+Dependencies for admin-only-cell (C:\Users\hp\BinnaCodes\binna\src\domains\admin\components\admin-only-cell.tsx):
+
+Imported by:
+Error reading file

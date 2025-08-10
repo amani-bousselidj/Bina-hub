@@ -1,0 +1,2318 @@
+erDiagram
+  public_address {
+    character varying id PK
+    character varying customer_id
+    character varying company
+    character varying first_name
+    character varying last_name
+    character varying address_1
+    character varying address_2
+    character varying city
+    character varying country_code
+    character varying province
+    character varying postal_code
+    character varying phone
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+  }
+  public_ai_insights {
+    uuid id PK
+    text type
+    text title
+    text description
+    integer confidence
+    text impact
+    text category
+    boolean actionable
+    boolean is_active
+    timestamp without time zone created_at
+  }
+  public_analytics_config {
+    character varying id PK
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    character varying user_id
+    boolean opt_out
+    boolean anonymize
+  }
+  public_api_key {
+    text id PK
+    text token
+    text salt
+    text redacted
+    text title
+    text type
+    timestamp with time zone last_used_at
+    text created_by
+    timestamp with time zone created_at
+    text revoked_by
+    timestamp with time zone revoked_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_application_method_buy_rules {
+    text application_method_id PK
+    text promotion_rule_id PK
+  }
+  public_application_method_target_rules {
+    text application_method_id PK
+    text promotion_rule_id PK
+  }
+  public_auth_identity {
+    text id PK
+    jsonb app_metadata
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_batch_job {
+    character varying id PK
+    text type
+    character varying created_by
+    jsonb context
+    jsonb result
+    boolean dry_run
+    timestamp with time zone created_at
+    timestamp with time zone pre_processed_at
+    timestamp with time zone confirmed_at
+    timestamp with time zone processing_at
+    timestamp with time zone completed_at
+    timestamp with time zone failed_at
+    timestamp with time zone canceled_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_cart {
+    character varying id PK
+    character varying email
+    character varying billing_address_id
+    character varying shipping_address_id
+    character varying region_id
+    character varying customer_id
+    character varying payment_id
+    USER-DEFINED type
+    timestamp with time zone completed_at
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+    character varying idempotency_key
+    jsonb context
+    timestamp with time zone payment_authorized_at
+    character varying sales_channel_id
+    text currency_code
+  }
+  public_cart_address {
+    text id PK
+    text customer_id
+    text company
+    text first_name
+    text last_name
+    text address_1
+    text address_2
+    text city
+    text country_code
+    text province
+    text postal_code
+    text phone
+    jsonb metadata
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_cart_discounts {
+    character varying cart_id PK
+    character varying discount_id PK
+  }
+  public_cart_gift_cards {
+    character varying cart_id PK
+    character varying gift_card_id PK
+  }
+  public_cart_line_item {
+    text id PK
+    text cart_id
+    text title
+    text subtitle
+    text thumbnail
+    integer quantity
+    text variant_id
+    text product_id
+    text product_title
+    text product_description
+    text product_subtitle
+    text product_type
+    text product_collection
+    text product_handle
+    text variant_sku
+    text variant_barcode
+    text variant_title
+    jsonb variant_option_values
+    boolean requires_shipping
+    boolean is_discountable
+    boolean is_tax_inclusive
+    numeric compare_at_unit_price
+    jsonb raw_compare_at_unit_price
+    numeric unit_price
+    jsonb raw_unit_price
+    jsonb metadata
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    text product_type_id
+    boolean is_custom_price
+    boolean is_giftcard
+  }
+  public_cart_line_item_adjustment {
+    text id PK
+    text description
+    text promotion_id
+    text code
+    numeric amount
+    jsonb raw_amount
+    text provider_id
+    jsonb metadata
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    text item_id
+  }
+  public_cart_line_item_tax_line {
+    text id PK
+    text description
+    text tax_rate_id
+    text code
+    real rate
+    text provider_id
+    jsonb metadata
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    text item_id
+  }
+  public_cart_payment_collection {
+    character varying cart_id PK
+    character varying payment_collection_id PK
+    character varying id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_cart_promotion {
+    character varying cart_id PK
+    character varying promotion_id PK
+    character varying id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_cart_shipping_method {
+    text id PK
+    text cart_id
+    text name
+    jsonb description
+    numeric amount
+    jsonb raw_amount
+    boolean is_tax_inclusive
+    text shipping_option_id
+    jsonb data
+    jsonb metadata
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_cart_shipping_method_adjustment {
+    text id PK
+    text description
+    text promotion_id
+    text code
+    numeric amount
+    jsonb raw_amount
+    text provider_id
+    jsonb metadata
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    text shipping_method_id
+  }
+  public_cart_shipping_method_tax_line {
+    text id PK
+    text description
+    text tax_rate_id
+    text code
+    real rate
+    text provider_id
+    jsonb metadata
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    text shipping_method_id
+  }
+  public_claim_image {
+    character varying id PK
+    character varying claim_item_id
+    character varying url
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+  }
+  public_claim_item {
+    character varying id PK
+    character varying claim_order_id
+    character varying item_id
+    character varying variant_id
+    USER-DEFINED reason
+    character varying note
+    integer quantity
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+  }
+  public_claim_item_tags {
+    character varying item_id PK
+    character varying tag_id PK
+  }
+  public_claim_order {
+    character varying id PK
+    USER-DEFINED payment_status
+    USER-DEFINED fulfillment_status
+    USER-DEFINED type
+    character varying order_id
+    character varying shipping_address_id
+    integer refund_amount
+    timestamp with time zone canceled_at
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+    character varying idempotency_key
+    boolean no_notification
+  }
+  public_claim_tag {
+    character varying id PK
+    character varying value
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+  }
+  public_concrete_orders {
+    uuid id PK
+    text supplier_id
+    text customer_name
+    integer quantity
+    text concrete_type
+    text status
+    timestamp without time zone delivery_date
+    numeric total_amount
+    timestamp without time zone created_at
+  }
+  public_construction_analysis {
+    uuid id PK
+    text document_name
+    jsonb analysis_data
+    jsonb calculations
+    timestamp without time zone created_at
+  }
+  public_construction_materials {
+    text id PK
+    text name
+    text name_en
+    text unit
+    text category
+    numeric standard_quantity
+    numeric price
+    ARRAY specifications
+    ARRAY suppliers
+    timestamp without time zone created_at
+  }
+  public_construction_projects {
+    uuid id PK
+    text user_id
+    text project_name
+    text description
+    text project_type
+    text status
+    numeric budget
+    numeric actual_cost
+    date start_date
+    integer completion_percentage
+    jsonb location
+    timestamp without time zone created_at
+    timestamp without time zone updated_at
+    text name
+    text title
+    text type
+    numeric spent
+    date end_date
+    date estimated_completion
+    integer progress
+    integer area
+    numeric estimated_cost
+    numeric spent_cost
+  }
+  public_country {
+    integer id PK
+    character varying iso_2
+    character varying iso_3
+    integer num_code
+    character varying name
+    character varying display_name
+    character varying region_id
+  }
+  public_credit_line {
+    text id PK
+    text cart_id
+    text reference
+    text reference_id
+    numeric amount
+    jsonb raw_amount
+    jsonb metadata
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_currency {
+    character varying code PK
+    character varying symbol
+    character varying symbol_native
+    character varying name
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    integer decimal_digits
+    numeric rounding
+    jsonb raw_rounding
+    timestamp with time zone deleted_at
+  }
+  public_custom_shipping_option {
+    character varying id PK
+    integer price
+    character varying shipping_option_id
+    character varying cart_id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+  }
+  public_customer {
+    character varying id PK
+    character varying email
+    character varying first_name
+    character varying last_name
+    character varying billing_address_id
+    character varying password_hash
+    character varying phone
+    boolean has_account
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+    text company_name
+    text created_by
+  }
+  public_customer_account_holder {
+    character varying customer_id PK
+    character varying account_holder_id PK
+    character varying id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_customer_address {
+    text id PK
+    text customer_id
+    text address_name
+    boolean is_default_shipping
+    boolean is_default_billing
+    text company
+    text first_name
+    text last_name
+    text address_1
+    text address_2
+    text city
+    text country_code
+    text province
+    text postal_code
+    text phone
+    jsonb metadata
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_customer_group {
+    character varying id PK
+    character varying name
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+    text created_by
+  }
+  public_customer_group_customer {
+    text id PK
+    text customer_id
+    text customer_group_id
+    jsonb metadata
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    text created_by
+    timestamp with time zone deleted_at
+  }
+  public_customer_group_customers {
+    character varying customer_group_id PK
+    character varying customer_id PK
+  }
+  public_customer_segments {
+    uuid id PK
+    text name
+    integer size
+    numeric avg_spend
+    numeric growth_rate
+    ARRAY characteristics
+    ARRAY recommended_actions
+    timestamp without time zone created_at
+  }
+  public_customers {
+    uuid id PK
+    text name
+    text email
+    text phone
+    text address
+    text city
+    text region
+    text postal_code
+    text type
+    text category
+    numeric credit_limit
+    uuid store_id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+  }
+  public_discount {
+    character varying id PK
+    character varying code
+    boolean is_dynamic
+    character varying rule_id
+    boolean is_disabled
+    character varying parent_discount_id
+    timestamp with time zone starts_at
+    timestamp with time zone ends_at
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+    integer usage_limit
+    integer usage_count
+    character varying valid_duration
+  }
+  public_discount_condition {
+    character varying id PK
+    USER-DEFINED type
+    USER-DEFINED operator
+    character varying discount_rule_id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+  }
+  public_discount_condition_customer_group {
+    character varying customer_group_id PK
+    character varying condition_id PK
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    jsonb metadata
+  }
+  public_discount_condition_product {
+    character varying product_id PK
+    character varying condition_id PK
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    jsonb metadata
+  }
+  public_discount_condition_product_collection {
+    character varying product_collection_id PK
+    character varying condition_id PK
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    jsonb metadata
+  }
+  public_discount_condition_product_tag {
+    character varying product_tag_id PK
+    character varying condition_id PK
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    jsonb metadata
+  }
+  public_discount_condition_product_type {
+    character varying product_type_id PK
+    character varying condition_id PK
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    jsonb metadata
+  }
+  public_discount_regions {
+    character varying discount_id PK
+    character varying region_id PK
+  }
+  public_discount_rule {
+    character varying id PK
+    character varying description
+    USER-DEFINED type
+    integer value
+    USER-DEFINED allocation
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+  }
+  public_discount_rule_products {
+    character varying discount_rule_id PK
+    character varying product_id PK
+  }
+  public_draft_order {
+    character varying id PK
+    USER-DEFINED status
+    integer display_id
+    character varying cart_id
+    character varying order_id
+    timestamp with time zone canceled_at
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone completed_at
+    jsonb metadata
+    character varying idempotency_key
+    boolean no_notification_order
+  }
+  public_employees {
+    uuid id PK
+    text name
+    text email
+    text phone
+    text position
+    text department
+    numeric salary
+    date hire_date
+    boolean is_active
+    uuid store_id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+  }
+  public_forum_categories {
+    text id PK
+    text name
+    text description
+    integer posts_count
+    text icon
+    text color
+    timestamp without time zone created_at
+  }
+  public_forum_posts {
+    uuid id PK
+    text title
+    text content
+    text author
+    text author_type
+    text category
+    integer replies_count
+    integer likes_count
+    boolean is_pinned
+    boolean is_active
+    ARRAY tags
+    timestamp without time zone created_at
+    timestamp without time zone updated_at
+  }
+  public_forum_stats {
+    uuid id PK
+    integer total_posts
+    integer total_users
+    integer active_topics
+    integer expert_answers
+    timestamp without time zone updated_at
+  }
+  public_fulfillment {
+    text id PK
+    character varying swap_id
+    character varying order_id
+    jsonb tracking_numbers
+    jsonb data
+    timestamp with time zone shipped_at
+    timestamp with time zone canceled_at
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    jsonb metadata
+    character varying idempotency_key
+    text provider_id
+    character varying claim_order_id
+    boolean no_notification
+    text location_id
+    timestamp with time zone packed_at
+    timestamp with time zone delivered_at
+    text shipping_option_id
+    text delivery_address_id
+    timestamp with time zone deleted_at
+    text marked_shipped_by
+    text created_by
+    boolean requires_shipping
+  }
+  public_fulfillment_address {
+    text id PK
+    text company
+    text first_name
+    text last_name
+    text address_1
+    text address_2
+    text city
+    text country_code
+    text province
+    text postal_code
+    text phone
+    jsonb metadata
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_fulfillment_item {
+    text fulfillment_id
+    character varying item_id
+    numeric quantity
+    text id PK
+    text title
+    text sku
+    text barcode
+    jsonb raw_quantity
+    text line_item_id
+    text inventory_item_id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_fulfillment_label {
+    text id PK
+    text tracking_number
+    text tracking_url
+    text label_url
+    text fulfillment_id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_fulfillment_set {
+    text id PK
+    text name
+    text type
+    jsonb metadata
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_geo_zone {
+    text id PK
+    text type
+    text country_code
+    text province_code
+    text city
+    text service_zone_id
+    jsonb postal_expression
+    jsonb metadata
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_gift_card {
+    character varying id PK
+    character varying code
+    integer value
+    integer balance
+    character varying region_id
+    character varying order_id
+    boolean is_disabled
+    timestamp with time zone ends_at
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+    real tax_rate
+  }
+  public_gift_card_transaction {
+    character varying id PK
+    character varying gift_card_id
+    character varying order_id
+    integer amount
+    timestamp with time zone created_at
+    boolean is_taxable
+    real tax_rate
+  }
+  public_idempotency_key {
+    character varying id PK
+    character varying idempotency_key
+    timestamp with time zone created_at
+    timestamp with time zone locked_at
+    character varying request_method
+    jsonb request_params
+    character varying request_path
+    integer response_code
+    jsonb response_body
+    character varying recovery_point
+  }
+  public_image {
+    character varying id PK
+    character varying url
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+    integer rank
+    text product_id
+  }
+  public_inventory_item {
+    text id PK
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    text sku
+    text origin_country
+    text hs_code
+    text mid_code
+    text material
+    integer weight
+    integer length
+    integer height
+    integer width
+    boolean requires_shipping
+    text description
+    text title
+    text thumbnail
+    jsonb metadata
+  }
+  public_inventory_level {
+    text id PK
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    text inventory_item_id
+    text location_id
+    numeric stocked_quantity
+    numeric reserved_quantity
+    numeric incoming_quantity
+    jsonb metadata
+    jsonb raw_stocked_quantity
+    jsonb raw_reserved_quantity
+    jsonb raw_incoming_quantity
+  }
+  public_invite {
+    character varying id PK
+    character varying user_email
+    USER-DEFINED role
+    boolean accepted
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+    character varying token
+    timestamp with time zone expires_at
+    text email
+  }
+  public_invoice_items {
+    uuid id PK
+    uuid invoice_id
+    character varying description
+    integer quantity
+    numeric unit_price
+    numeric total_price
+    timestamp without time zone created_at
+  }
+  public_invoices {
+    uuid id PK
+    text user_id
+    text invoice_number
+    numeric subtotal
+    numeric tax_amount
+    numeric total_amount
+    text status
+    date due_date
+    date paid_date
+    text payment_method
+    timestamp without time zone created_at
+    jsonb items
+  }
+  public_line_item {
+    character varying id PK
+    character varying cart_id
+    character varying order_id
+    character varying swap_id
+    character varying title
+    character varying description
+    character varying thumbnail
+    boolean is_giftcard
+    boolean should_merge
+    boolean allow_discounts
+    boolean has_shipping
+    integer unit_price
+    character varying variant_id
+    integer quantity
+    integer fulfilled_quantity
+    integer returned_quantity
+    integer shipped_quantity
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    jsonb metadata
+    character varying claim_order_id
+    boolean is_return
+    character varying original_item_id
+    character varying order_edit_id
+  }
+  public_line_item_adjustment {
+    character varying id PK
+    character varying item_id
+    character varying description
+    character varying discount_id
+    numeric amount
+    jsonb metadata
+  }
+  public_line_item_tax_line {
+    character varying id PK
+    real rate
+    character varying name
+    character varying code
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    jsonb metadata
+    character varying item_id
+  }
+  public_link_module_migrations {
+    integer id PK
+    character varying table_name
+    jsonb link_descriptor
+    timestamp without time zone created_at
+  }
+  public_location {
+    bigint id PK
+    text name
+    text address
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+  }
+  public_location_fulfillment_provider {
+    character varying stock_location_id PK
+    character varying fulfillment_provider_id PK
+    character varying id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_location_fulfillment_set {
+    character varying stock_location_id PK
+    character varying fulfillment_set_id PK
+    character varying id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_market_trends {
+    uuid id PK
+    text market
+    numeric growth_rate
+    bigint volume
+    ARRAY top_categories
+    jsonb predictions
+    timestamp without time zone created_at
+  }
+  public_marketplace_orders {
+    uuid id PK
+    text store_id
+    text buyer_name
+    ARRAY products
+    numeric total_amount
+    text status
+    timestamp without time zone order_date
+    timestamp without time zone created_at
+    text order_id
+    ARRAY materials
+  }
+  public_material_prices {
+    uuid id PK
+    text city
+    text material_name
+    text category
+    numeric price
+    text unit
+    text supplier_id
+    numeric change
+    timestamp without time zone updated_at
+    integer stock_quantity
+    text store_id
+  }
+  public_migrations {
+    integer id PK
+    bigint timestamp
+    character varying name
+  }
+  public_mikro_orm_migrations {
+    integer id PK
+    character varying name
+    timestamp with time zone executed_at
+  }
+  public_note {
+    character varying id PK
+    character varying value
+    character varying resource_type
+    character varying resource_id
+    character varying author_id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+  }
+  public_notification {
+    text id PK
+    text to
+    text channel
+    text template
+    jsonb data
+    text trigger_type
+    text resource_id
+    text resource_type
+    text receiver_id
+    text original_notification_id
+    text idempotency_key
+    text external_id
+    text provider_id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    text status
+  }
+  public_notification_provider {
+    text id PK
+    text handle
+    text name
+    boolean is_enabled
+    ARRAY channels
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_oauth {
+    character varying id PK
+    character varying display_name
+    character varying application_name
+    character varying install_url
+    character varying uninstall_url
+    jsonb data
+  }
+  public_order {
+    character varying id PK
+    USER-DEFINED status
+    USER-DEFINED fulfillment_status
+    USER-DEFINED payment_status
+    integer display_id
+    character varying cart_id
+    character varying customer_id
+    character varying email
+    character varying billing_address_id
+    character varying shipping_address_id
+    character varying region_id
+    character varying currency_code
+    real tax_rate
+    timestamp with time zone canceled_at
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    jsonb metadata
+    character varying idempotency_key
+    character varying draft_order_id
+    boolean no_notification
+    character varying external_id
+    character varying sales_channel_id
+  }
+  public_order_cart {
+    character varying order_id PK
+    character varying cart_id PK
+    character varying id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_order_discounts {
+    character varying order_id PK
+    character varying discount_id PK
+  }
+  public_order_edit {
+    character varying id PK
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    character varying order_id
+    character varying internal_note
+    character varying created_by
+    character varying requested_by
+    timestamp with time zone requested_at
+    character varying confirmed_by
+    timestamp with time zone confirmed_at
+    character varying declined_by
+    character varying declined_reason
+    timestamp with time zone declined_at
+    character varying canceled_by
+    timestamp with time zone canceled_at
+    character varying payment_collection_id
+  }
+  public_order_fulfillment {
+    character varying order_id PK
+    character varying fulfillment_id PK
+    character varying id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_order_gift_cards {
+    character varying order_id PK
+    character varying gift_card_id PK
+  }
+  public_order_item_change {
+    character varying id PK
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    USER-DEFINED type
+    character varying order_edit_id
+    character varying original_line_item_id
+    character varying line_item_id
+  }
+  public_order_payment_collection {
+    character varying order_id PK
+    character varying payment_collection_id PK
+    character varying id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_order_promotion {
+    character varying order_id PK
+    character varying promotion_id PK
+    character varying id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_orders {
+    uuid id PK
+    text user_id
+    text order_number
+    text status
+    numeric total_amount
+    text currency
+    jsonb items
+    text payment_method
+    text payment_status
+    timestamp without time zone created_at
+    text delivery_address
+    timestamp without time zone order_date
+    text shipping_address
+    text store_name
+  }
+  public_payment {
+    character varying id PK
+    character varying swap_id
+    character varying cart_id
+    character varying order_id
+    integer amount
+    character varying currency_code
+    integer amount_refunded
+    character varying provider_id
+    jsonb data
+    timestamp with time zone captured_at
+    timestamp with time zone canceled_at
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    jsonb metadata
+    character varying idempotency_key
+  }
+  public_payment_collection {
+    character varying id PK
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    USER-DEFINED type
+    USER-DEFINED status
+    text description
+    integer amount
+    integer authorized_amount
+    character varying region_id
+    character varying currency_code
+    jsonb metadata
+    character varying created_by
+  }
+  public_payment_collection_payments {
+    character varying payment_collection_id PK
+    character varying payment_id PK
+  }
+  public_payment_collection_sessions {
+    character varying payment_collection_id PK
+    character varying payment_session_id PK
+  }
+  public_payment_provider {
+    character varying id PK
+    boolean is_installed
+  }
+  public_payment_session {
+    character varying id PK
+    character varying cart_id
+    character varying provider_id
+    boolean is_selected
+    USER-DEFINED status
+    jsonb data
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    character varying idempotency_key
+    timestamp with time zone payment_authorized_at
+    integer amount
+    boolean is_initiated
+  }
+  public_price {
+    text id PK
+    text title
+    text price_set_id
+    text currency_code
+    jsonb raw_amount
+    integer rules_count
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    text price_list_id
+    numeric amount
+    integer min_quantity
+    integer max_quantity
+  }
+  public_price_list {
+    character varying id PK
+    character varying description
+    USER-DEFINED type
+    USER-DEFINED status
+    timestamp with time zone starts_at
+    timestamp with time zone ends_at
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    integer rules_count
+    text title
+  }
+  public_price_list_customer_groups {
+    character varying price_list_id PK
+    character varying customer_group_id PK
+  }
+  public_price_list_rule {
+    text id PK
+    text price_list_id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb value
+    text attribute
+  }
+  public_price_preference {
+    text id PK
+    text attribute
+    text value
+    boolean is_tax_inclusive
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_price_rule {
+    text id PK
+    text value
+    integer priority
+    text price_id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    text attribute
+    text operator
+  }
+  public_price_set {
+    text id PK
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_product {
+    character varying id PK
+    character varying title
+    character varying subtitle
+    character varying description
+    character varying handle
+    boolean is_giftcard
+    character varying thumbnail
+    integer weight
+    integer length
+    integer height
+    integer width
+    character varying hs_code
+    character varying origin_country
+    character varying mid_code
+    character varying material
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+    character varying collection_id
+    character varying type_id
+    boolean discountable
+    text status
+    character varying external_id
+  }
+  public_product_category {
+    character varying id PK
+    text name
+    text handle
+    character varying parent_category_id
+    text mpath
+    boolean is_active
+    boolean is_internal
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    integer rank
+    text description
+    jsonb metadata
+    timestamp with time zone deleted_at
+  }
+  public_product_category_product {
+    character varying product_category_id
+    character varying product_id
+  }
+  public_product_collection {
+    character varying id PK
+    character varying title
+    character varying handle
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+  }
+  public_product_option {
+    character varying id PK
+    character varying title
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+    text product_id
+  }
+  public_product_option_value {
+    character varying id PK
+    character varying value
+    character varying option_id
+    character varying variant_id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+  }
+  public_product_sales_channel {
+    character varying product_id PK
+    character varying sales_channel_id PK
+    character varying id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_product_shipping_profile {
+    character varying product_id
+    character varying shipping_profile_id
+    character varying id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_product_tag {
+    character varying id PK
+    character varying value
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+  }
+  public_product_tags {
+    character varying product_id PK
+    character varying product_tag_id PK
+  }
+  public_product_tax_rate {
+    character varying product_id PK
+    character varying rate_id PK
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    jsonb metadata
+  }
+  public_product_type {
+    character varying id PK
+    character varying value
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+  }
+  public_product_type_tax_rate {
+    character varying product_type_id PK
+    character varying rate_id PK
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    jsonb metadata
+  }
+  public_product_variant {
+    character varying id PK
+    character varying title
+    character varying product_id
+    character varying sku
+    character varying barcode
+    character varying ean
+    character varying upc
+    boolean allow_backorder
+    boolean manage_inventory
+    character varying hs_code
+    character varying origin_country
+    character varying mid_code
+    character varying material
+    integer weight
+    integer length
+    integer height
+    integer width
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+    integer variant_rank
+  }
+  public_product_variant_inventory_item {
+    character varying id PK
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    text inventory_item_id
+    text variant_id
+    integer required_quantity
+    timestamp with time zone deleted_at
+  }
+  public_product_variant_money_amount {
+    character varying id PK
+    text money_amount_id
+    text variant_id
+    timestamp with time zone deleted_at
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+  }
+  public_product_variant_option {
+    text variant_id PK
+    text option_value_id PK
+  }
+  public_product_variant_price_set {
+    character varying variant_id PK
+    character varying price_set_id PK
+    character varying id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_products {
+    uuid id PK
+    character varying name
+    character varying name_ar
+    character varying barcode
+    numeric price
+    numeric cost_price
+    integer quantity_in_stock
+    character varying category
+    text image_url
+    boolean allow_discount
+    numeric min_price
+    character varying status
+    timestamp without time zone created_at
+    timestamp without time zone updated_at
+  }
+  public_profiles {
+    uuid id PK
+    text first_name
+    text last_name
+  }
+  public_promotion {
+    text id PK
+    text code
+    text campaign_id
+    boolean is_automatic
+    text type
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    text status
+  }
+  public_promotion_application_method {
+    text id PK
+    numeric value
+    jsonb raw_value
+    integer max_quantity
+    integer apply_to_quantity
+    integer buy_rules_min_quantity
+    text type
+    text target_type
+    text allocation
+    text promotion_id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    text currency_code
+  }
+  public_promotion_campaign {
+    text id PK
+    text name
+    text description
+    text campaign_identifier
+    timestamp with time zone starts_at
+    timestamp with time zone ends_at
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_promotion_campaign_budget {
+    text id PK
+    text type
+    text campaign_id
+    numeric limit
+    jsonb raw_limit
+    numeric used
+    jsonb raw_used
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    text currency_code
+  }
+  public_promotion_promotion_rule {
+    text promotion_id PK
+    text promotion_rule_id PK
+  }
+  public_promotion_rule {
+    text id PK
+    text description
+    text attribute
+    text operator
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_promotion_rule_value {
+    text id PK
+    text promotion_rule_id
+    text value
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_provider_identity {
+    text id PK
+    text entity_id
+    text provider
+    text auth_identity_id
+    jsonb user_metadata
+    jsonb provider_metadata
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_public_projects {
+    uuid id PK
+    text title
+    text description
+    numeric price
+    text location
+    integer area
+    integer bedrooms
+    integer bathrooms
+    text type
+    text status
+    ARRAY images
+    ARRAY features
+    jsonb contact
+    timestamp without time zone created_at
+  }
+  public_publishable_api_key {
+    character varying id PK
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    character varying created_by
+    character varying revoked_by
+    timestamp with time zone revoked_at
+    character varying title
+  }
+  public_publishable_api_key_sales_channel {
+    character varying sales_channel_id PK
+    character varying publishable_key_id PK
+    text id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_refund {
+    character varying id PK
+    character varying order_id
+    integer amount
+    character varying note
+    USER-DEFINED reason
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    jsonb metadata
+    character varying idempotency_key
+    character varying payment_id
+  }
+  public_region {
+    character varying id PK
+    character varying name
+    character varying currency_code
+    real tax_rate
+    character varying tax_code
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+    boolean gift_cards_taxable
+    boolean automatic_taxes
+    character varying tax_provider_id
+  }
+  public_region_country {
+    text iso_2 PK
+    text iso_3
+    text num_code
+    text name
+    text display_name
+    text region_id
+    jsonb metadata
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_region_fulfillment_providers {
+    character varying region_id PK
+    character varying provider_id PK
+  }
+  public_region_payment_provider {
+    character varying region_id PK
+    character varying payment_provider_id PK
+    character varying id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_region_payment_providers {
+    character varying region_id PK
+    character varying provider_id PK
+  }
+  public_reservation_item {
+    text id PK
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    text line_item_id
+    text location_id
+    numeric quantity
+    text external_id
+    text description
+    text created_by
+    jsonb metadata
+    text inventory_item_id
+    boolean allow_backorder
+    jsonb raw_quantity
+  }
+  public_return {
+    character varying id PK
+    USER-DEFINED status
+    character varying swap_id
+    character varying order_id
+    jsonb shipping_data
+    integer refund_amount
+    timestamp with time zone received_at
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    jsonb metadata
+    character varying idempotency_key
+    character varying claim_order_id
+    boolean no_notification
+    character varying location_id
+  }
+  public_return_fulfillment {
+    character varying return_id PK
+    character varying fulfillment_id PK
+    character varying id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_return_item {
+    character varying return_id PK
+    character varying item_id PK
+    integer quantity
+    boolean is_requested
+    integer requested_quantity
+    integer received_quantity
+    jsonb metadata
+    character varying reason_id
+    character varying note
+  }
+  public_return_reason {
+    character varying id PK
+    character varying value
+    character varying label
+    character varying description
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+    character varying parent_return_reason_id
+  }
+  public_sales_channel {
+    character varying id PK
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    character varying name
+    character varying description
+    boolean is_disabled
+    jsonb metadata
+  }
+  public_sales_channel_location {
+    character varying id PK
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    text sales_channel_id
+    text location_id
+    timestamp with time zone deleted_at
+  }
+  public_sales_channel_stock_location {
+    character varying sales_channel_id PK
+    character varying stock_location_id PK
+    character varying id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_script_migrations {
+    integer id PK
+    character varying script_name
+    timestamp with time zone created_at
+    timestamp with time zone finished_at
+  }
+  public_service_providers {
+    uuid id PK
+    text user_id
+    text business_name
+    text owner_name
+    text email
+    text phone
+    text business_type
+    ARRAY service_categories
+    integer experience_years
+    integer team_size
+    numeric rating
+    integer review_count
+    integer completed_projects
+    integer active_projects
+    text response_time
+    text verification_status
+    jsonb location
+    timestamp without time zone created_at
+    text company_name
+    boolean is_verified
+  }
+  public_service_zone {
+    text id PK
+    text name
+    jsonb metadata
+    text fulfillment_set_id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_settings {
+    bigint id PK
+    text key
+    text value
+  }
+  public_shipping_method {
+    character varying id PK
+    character varying shipping_option_id
+    character varying order_id
+    character varying cart_id
+    character varying swap_id
+    character varying return_id
+    integer price
+    jsonb data
+    character varying claim_order_id
+  }
+  public_shipping_method_tax_line {
+    character varying id PK
+    real rate
+    character varying name
+    character varying code
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    jsonb metadata
+    character varying shipping_method_id
+  }
+  public_shipping_option {
+    text id PK
+    text name
+    character varying region_id
+    character varying shipping_profile_id
+    character varying provider_id
+    text price_type
+    integer amount
+    boolean is_return
+    jsonb data
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+    boolean admin_only
+    text service_zone_id
+    text shipping_option_type_id
+  }
+  public_shipping_option_price_set {
+    character varying shipping_option_id PK
+    character varying price_set_id PK
+    character varying id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_shipping_option_requirement {
+    character varying id PK
+    character varying shipping_option_id
+    USER-DEFINED type
+    integer amount
+    timestamp with time zone deleted_at
+  }
+  public_shipping_option_rule {
+    text id PK
+    text attribute
+    text operator
+    jsonb value
+    text shipping_option_id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_shipping_option_type {
+    text id PK
+    text label
+    text description
+    text code
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_shipping_profile {
+    text id PK
+    text name
+    text type
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+  }
+  public_shipping_tax_rate {
+    character varying shipping_option_id PK
+    character varying rate_id PK
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    jsonb metadata
+  }
+  public_staged_job {
+    character varying id PK
+    character varying event_name
+    jsonb data
+    jsonb options
+  }
+  public_stock {
+    bigint id PK
+    character varying product_id
+    integer quantity
+    bigint location_id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_stock_location {
+    text id PK
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    text name
+    text address_id
+    jsonb metadata
+  }
+  public_stock_location_address {
+    text id PK
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    text address_1
+    text address_2
+    text company
+    text city
+    text country_code
+    text phone
+    text province
+    text postal_code
+    jsonb metadata
+  }
+  public_store {
+    text id PK
+    text name
+    character varying swap_link_template
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    jsonb metadata
+    character varying payment_link_template
+    character varying invite_link_template
+    text default_sales_channel_id
+    text default_location_id
+    text default_region_id
+    timestamp with time zone deleted_at
+  }
+  public_store_currencies {
+    character varying store_id PK
+    character varying currency_code PK
+  }
+  public_store_currency {
+    text id PK
+    text currency_code
+    boolean is_default
+    text store_id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_store_products {
+    text id PK
+    text title
+    text description
+    text sku
+    numeric price
+    numeric cost_price
+    text category
+    text status
+    jsonb tags
+    jsonb images
+    jsonb inventory
+    jsonb dimensions
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    uuid user_id
+  }
+  public_store_profiles {
+    uuid id PK
+    text name
+    text description
+    text category
+    numeric rating
+    text location
+    text phone
+    text email
+    boolean is_active
+    timestamp without time zone created_at
+  }
+  public_store_promotions {
+    uuid id PK
+    text store_id
+    text title
+    text description
+    integer discount_percentage
+    boolean is_active
+    timestamp without time zone start_date
+    timestamp without time zone end_date
+    timestamp without time zone created_at
+  }
+  public_stores {
+    uuid id PK
+    uuid user_id
+    text store_name
+    text owner_name
+    text email
+    text phone
+    text business_type
+    text description
+    numeric rating
+    integer review_count
+    numeric total_sales
+    integer total_orders
+    text verification_status
+    jsonb location
+    boolean is_active
+    timestamp without time zone created_at
+    text store_id
+    text owner_user_id
+    text category
+    text address
+    text name
+  }
+  public_swap {
+    character varying id PK
+    USER-DEFINED fulfillment_status
+    USER-DEFINED payment_status
+    character varying order_id
+    integer difference_due
+    character varying shipping_address_id
+    character varying cart_id
+    timestamp with time zone confirmed_at
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+    character varying idempotency_key
+    boolean no_notification
+    timestamp with time zone canceled_at
+    boolean allow_backorder
+  }
+  public_tax_provider {
+    character varying id PK
+    boolean is_installed
+    boolean is_enabled
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+  }
+  public_tax_rate {
+    character varying id PK
+    real rate
+    character varying code
+    character varying name
+    character varying region_id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    jsonb metadata
+    text tax_region_id
+    timestamp with time zone deleted_at
+    text created_by
+    boolean is_default
+    boolean is_combinable
+  }
+  public_tax_rate_rule {
+    text id PK
+    text tax_rate_id
+    text reference_id
+    text reference
+    jsonb metadata
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    text created_by
+    timestamp with time zone deleted_at
+  }
+  public_tax_region {
+    text id PK
+    text provider_id
+    text country_code
+    text province_code
+    text parent_id
+    jsonb metadata
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    text created_by
+    timestamp with time zone deleted_at
+  }
+  public_tracking_link {
+    character varying id PK
+    character varying url
+    character varying tracking_number
+    character varying fulfillment_id
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+    character varying idempotency_key
+  }
+  public_user {
+    character varying id PK
+    character varying email
+    character varying first_name
+    character varying last_name
+    character varying password_hash
+    character varying api_token
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    timestamp with time zone deleted_at
+    jsonb metadata
+    USER-DEFINED role
+    text avatar_url
+  }
+  public_user_bookings {
+    uuid id PK
+    text user_id
+    text title
+    timestamp without time zone date
+    text time
+    text status
+    text service_type
+    text provider
+    text location
+    timestamp without time zone created_at
+    timestamp without time zone booking_date
+    text contact_info
+    text description
+  }
+  public_user_favorites {
+    uuid id PK
+    text user_id
+    text item_type
+    text item_id
+    text product_name
+    text store_name
+    numeric price
+    text image
+    text description
+    numeric rating
+    text location
+    timestamp without time zone created_at
+  }
+  public_user_profiles {
+    uuid id PK
+    text user_id
+    text email
+    text display_name
+    text phone
+    text city
+    text account_type
+    integer loyalty_points
+    integer current_level
+    numeric total_spent
+    text role
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+    text user_type
+    jsonb permissions
+    text store_id
+    text company
+    text specialization
+    integer experience_years
+    text location
+    text avatar_url
+    boolean is_verified
+    boolean is_active
+    text status
+    text name
+  }
+  public_users {
+    uuid id PK
+    character varying email
+    character varying full_name
+    character varying role
+    boolean is_active
+    timestamp with time zone created_at
+    timestamp with time zone updated_at
+  }
+  public_warranties {
+    uuid id PK
+    text user_id
+    text product_name
+    text warranty_type
+    integer warranty_period_months
+    date purchase_date
+    date expiry_date
+    text status
+    timestamp without time zone created_at
+  }
+  public_workflow_execution {
+    character varying id
+    character varying workflow_id PK
+    character varying transaction_id PK
+    jsonb execution
+    jsonb context
+    character varying state
+    timestamp without time zone created_at
+    timestamp without time zone updated_at
+    timestamp without time zone deleted_at
+    integer retention_time
+    text run_id PK
+  }
+  public_address }o--|| public_customer : "customer_id -> id"
+  public_address }o--|| public_country : "country_code -> iso_2"
+  public_application_method_buy_rules }o--|| public_promotion_application_method : "application_method_id -> id"
+  public_application_method_buy_rules }o--|| public_promotion_rule : "promotion_rule_id -> id"
+  public_application_method_target_rules }o--|| public_promotion_rule : "promotion_rule_id -> id"
+  public_application_method_target_rules }o--|| public_promotion_application_method : "application_method_id -> id"
+  public_batch_job }o--|| public_user : "created_by -> id"
+  public_cart }o--|| public_cart_address : "billing_address_id -> id"
+  public_cart }o--|| public_cart_address : "shipping_address_id -> id"
+  public_cart_discounts }o--|| public_discount : "discount_id -> id"
+  public_cart_discounts }o--|| public_cart : "cart_id -> id"
+  public_cart_gift_cards }o--|| public_cart : "cart_id -> id"
+  public_cart_gift_cards }o--|| public_gift_card : "gift_card_id -> id"
+  public_cart_line_item }o--|| public_cart : "cart_id -> id"
+  public_cart_line_item_adjustment }o--|| public_cart_line_item : "item_id -> id"
+  public_cart_line_item_tax_line }o--|| public_cart_line_item : "item_id -> id"
+  public_cart_shipping_method }o--|| public_cart : "cart_id -> id"
+  public_cart_shipping_method_adjustment }o--|| public_cart_shipping_method : "shipping_method_id -> id"
+  public_cart_shipping_method_tax_line }o--|| public_cart_shipping_method : "shipping_method_id -> id"
+  public_claim_image }o--|| public_claim_item : "claim_item_id -> id"
+  public_claim_item }o--|| public_line_item : "item_id -> id"
+  public_claim_item }o--|| public_product_variant : "variant_id -> id"
+  public_claim_item }o--|| public_claim_order : "claim_order_id -> id"
+  public_claim_item_tags }o--|| public_claim_tag : "tag_id -> id"
+  public_claim_item_tags }o--|| public_claim_item : "item_id -> id"
+  public_claim_order }o--|| public_address : "shipping_address_id -> id"
+  public_claim_order }o--|| public_order : "order_id -> id"
+  public_country }o--|| public_region : "region_id -> id"
+  public_credit_line }o--|| public_cart : "cart_id -> id"
+  public_custom_shipping_option }o--|| public_cart : "cart_id -> id"
+  public_custom_shipping_option }o--|| public_shipping_option : "shipping_option_id -> id"
+  public_customer_address }o--|| public_customer : "customer_id -> id"
+  public_customer_group_customer }o--|| public_customer_group : "customer_group_id -> id"
+  public_customer_group_customer }o--|| public_customer : "customer_id -> id"
+  public_customer_group_customers }o--|| public_customer : "customer_id -> id"
+  public_customer_group_customers }o--|| public_customer_group : "customer_group_id -> id"
+  public_customers }o--|| public_stores : "store_id -> id"
+  public_discount }o--|| public_discount_rule : "rule_id -> id"
+  public_discount }o--|| public_discount : "parent_discount_id -> id"
+  public_discount_condition }o--|| public_discount_rule : "discount_rule_id -> id"
+  public_discount_condition_customer_group }o--|| public_customer_group : "customer_group_id -> id"
+  public_discount_condition_customer_group }o--|| public_discount_condition : "condition_id -> id"
+  public_discount_condition_product }o--|| public_discount_condition : "condition_id -> id"
+  public_discount_condition_product }o--|| public_product : "product_id -> id"
+  public_discount_condition_product_collection }o--|| public_discount_condition : "condition_id -> id"
+  public_discount_condition_product_collection }o--|| public_product_collection : "product_collection_id -> id"
+  public_discount_condition_product_tag }o--|| public_product_tag : "product_tag_id -> id"
+  public_discount_condition_product_tag }o--|| public_discount_condition : "condition_id -> id"
+  public_discount_condition_product_type }o--|| public_product_type : "product_type_id -> id"
+  public_discount_condition_product_type }o--|| public_discount_condition : "condition_id -> id"
+  public_discount_regions }o--|| public_region : "region_id -> id"
+  public_discount_regions }o--|| public_discount : "discount_id -> id"
+  public_discount_rule_products }o--|| public_product : "product_id -> id"
+  public_discount_rule_products }o--|| public_discount_rule : "discount_rule_id -> id"
+  public_draft_order }o--|| public_cart : "cart_id -> id"
+  public_draft_order }o--|| public_order : "order_id -> id"
+  public_employees }o--|| public_stores : "store_id -> id"
+  public_fulfillment }o--|| public_shipping_option : "shipping_option_id -> id"
+  public_fulfillment }o--|| public_fulfillment_address : "delivery_address_id -> id"
+  public_fulfillment_item }o--|| public_fulfillment : "fulfillment_id -> id"
+  public_fulfillment_label }o--|| public_fulfillment : "fulfillment_id -> id"
+  public_geo_zone }o--|| public_service_zone : "service_zone_id -> id"
+  public_gift_card }o--|| public_region : "region_id -> id"
+  public_gift_card }o--|| public_order : "order_id -> id"
+  public_gift_card_transaction }o--|| public_gift_card : "gift_card_id -> id"
+  public_gift_card_transaction }o--|| public_order : "order_id -> id"
+  public_image }o--|| public_product : "product_id -> id"
+  public_inventory_level }o--|| public_inventory_item : "inventory_item_id -> id"
+  public_line_item }o--|| public_claim_order : "claim_order_id -> id"
+  public_line_item }o--|| public_order : "order_id -> id"
+  public_line_item }o--|| public_swap : "swap_id -> id"
+  public_line_item }o--|| public_cart : "cart_id -> id"
+  public_line_item }o--|| public_order_edit : "order_edit_id -> id"
+  public_line_item }o--|| public_line_item : "original_item_id -> id"
+  public_line_item }o--|| public_product_variant : "variant_id -> id"
+  public_line_item_adjustment }o--|| public_line_item : "item_id -> id"
+  public_line_item_adjustment }o--|| public_discount : "discount_id -> id"
+  public_line_item_tax_line }o--|| public_line_item : "item_id -> id"
+  public_notification }o--|| public_notification_provider : "provider_id -> id"
+  public_order }o--|| public_sales_channel : "sales_channel_id -> id"
+  public_order }o--|| public_address : "shipping_address_id -> id"
+  public_order }o--|| public_address : "billing_address_id -> id"
+  public_order }o--|| public_currency : "currency_code -> code"
+  public_order }o--|| public_draft_order : "draft_order_id -> id"
+  public_order }o--|| public_cart : "cart_id -> id"
+  public_order }o--|| public_customer : "customer_id -> id"
+  public_order }o--|| public_region : "region_id -> id"
+  public_order_discounts }o--|| public_discount : "discount_id -> id"
+  public_order_discounts }o--|| public_order : "order_id -> id"
+  public_order_edit }o--|| public_order : "order_id -> id"
+  public_order_edit }o--|| public_payment_collection : "payment_collection_id -> id"
+  public_order_gift_cards }o--|| public_gift_card : "gift_card_id -> id"
+  public_order_gift_cards }o--|| public_order : "order_id -> id"
+  public_order_item_change }o--|| public_order_edit : "order_edit_id -> id"
+  public_order_item_change }o--|| public_line_item : "line_item_id -> id"
+  public_order_item_change }o--|| public_line_item : "original_line_item_id -> id"
+  public_payment }o--|| public_cart : "cart_id -> id"
+  public_payment }o--|| public_currency : "currency_code -> code"
+  public_payment }o--|| public_swap : "swap_id -> id"
+  public_payment }o--|| public_order : "order_id -> id"
+  public_payment_collection }o--|| public_region : "region_id -> id"
+  public_payment_collection_payments }o--|| public_payment_collection : "payment_collection_id -> id"
+  public_payment_collection_payments }o--|| public_payment : "payment_id -> id"
+  public_payment_collection_sessions }o--|| public_payment_collection : "payment_collection_id -> id"
+  public_payment_collection_sessions }o--|| public_payment_session : "payment_session_id -> id"
+  public_payment_session }o--|| public_cart : "cart_id -> id"
+  public_price }o--|| public_price_set : "price_set_id -> id"
+  public_price }o--|| public_price_list : "price_list_id -> id"
+  public_price_list_customer_groups }o--|| public_price_list : "price_list_id -> id"
+  public_price_list_customer_groups }o--|| public_customer_group : "customer_group_id -> id"
+  public_price_list_rule }o--|| public_price_list : "price_list_id -> id"
+  public_price_rule }o--|| public_price : "price_id -> id"
+  public_product }o--|| public_product_type : "type_id -> id"
+  public_product }o--|| public_product_type : "type_id -> id"
+  public_product }o--|| public_product_collection : "collection_id -> id"
+  public_product }o--|| public_product_collection : "collection_id -> id"
+  public_product_category }o--|| public_product_category : "parent_category_id -> id"
+  public_product_category_product }o--|| public_product_category : "product_category_id -> id"
+  public_product_category_product }o--|| public_product_category : "product_category_id -> id"
+  public_product_category_product }o--|| public_product : "product_id -> id"
+  public_product_category_product }o--|| public_product : "product_id -> id"
+  public_product_option }o--|| public_product : "product_id -> id"
+  public_product_option }o--|| public_product : "product_id -> id"
+  public_product_option_value }o--|| public_product_option : "option_id -> id"
+  public_product_option_value }o--|| public_product_variant : "variant_id -> id"
+  public_product_option_value }o--|| public_product_option : "option_id -> id"
+  public_product_tags }o--|| public_product : "product_id -> id"
+  public_product_tags }o--|| public_product_tag : "product_tag_id -> id"
+  public_product_tags }o--|| public_product : "product_id -> id"
+  public_product_tags }o--|| public_product_tag : "product_tag_id -> id"
+  public_product_tax_rate }o--|| public_tax_rate : "rate_id -> id"
+  public_product_tax_rate }o--|| public_product : "product_id -> id"
+  public_product_type_tax_rate }o--|| public_product_type : "product_type_id -> id"
+  public_product_variant }o--|| public_product : "product_id -> id"
+  public_product_variant }o--|| public_product : "product_id -> id"
+  public_product_variant_option }o--|| public_product_variant : "variant_id -> id"
+  public_product_variant_option }o--|| public_product_option_value : "option_value_id -> id"
+  public_promotion }o--|| public_promotion_campaign : "campaign_id -> id"
+  public_promotion_application_method }o--|| public_promotion : "promotion_id -> id"
+  public_promotion_campaign_budget }o--|| public_promotion_campaign : "campaign_id -> id"
+  public_promotion_promotion_rule }o--|| public_promotion : "promotion_id -> id"
+  public_promotion_promotion_rule }o--|| public_promotion_rule : "promotion_rule_id -> id"
+  public_promotion_rule_value }o--|| public_promotion_rule : "promotion_rule_id -> id"
+  public_provider_identity }o--|| public_auth_identity : "auth_identity_id -> id"
+  public_refund }o--|| public_order : "order_id -> id"
+  public_refund }o--|| public_payment : "payment_id -> id"
+  public_region_country }o--|| public_region : "region_id -> id"
+  public_region_fulfillment_providers }o--|| public_region : "region_id -> id"
+  public_region_payment_providers }o--|| public_payment_provider : "provider_id -> id"
+  public_region_payment_providers }o--|| public_region : "region_id -> id"
+  public_reservation_item }o--|| public_inventory_item : "inventory_item_id -> id"
+  public_return }o--|| public_swap : "swap_id -> id"
+  public_return }o--|| public_claim_order : "claim_order_id -> id"
+  public_return }o--|| public_order : "order_id -> id"
+  public_return_item }o--|| public_return : "return_id -> id"
+  public_return_item }o--|| public_line_item : "item_id -> id"
+  public_return_item }o--|| public_return_reason : "reason_id -> id"
+  public_return_reason }o--|| public_return_reason : "parent_return_reason_id -> id"
+  public_service_zone }o--|| public_fulfillment_set : "fulfillment_set_id -> id"
+  public_shipping_method }o--|| public_claim_order : "claim_order_id -> id"
+  public_shipping_method }o--|| public_order : "order_id -> id"
+  public_shipping_method }o--|| public_return : "return_id -> id"
+  public_shipping_method }o--|| public_shipping_option : "shipping_option_id -> id"
+  public_shipping_method }o--|| public_swap : "swap_id -> id"
+  public_shipping_method }o--|| public_cart : "cart_id -> id"
+  public_shipping_method_tax_line }o--|| public_shipping_method : "shipping_method_id -> id"
+  public_shipping_option }o--|| public_shipping_profile : "shipping_profile_id -> id"
+  public_shipping_option }o--|| public_service_zone : "service_zone_id -> id"
+  public_shipping_option }o--|| public_shipping_option_type : "shipping_option_type_id -> id"
+  public_shipping_option_requirement }o--|| public_shipping_option : "shipping_option_id -> id"
+  public_shipping_option_rule }o--|| public_shipping_option : "shipping_option_id -> id"
+  public_shipping_tax_rate }o--|| public_shipping_option : "shipping_option_id -> id"
+  public_stock }o--|| public_product : "product_id -> id"
+  public_stock }o--|| public_location : "location_id -> id"
+  public_stock_location }o--|| public_stock_location_address : "address_id -> id"
+  public_store_currencies }o--|| public_currency : "currency_code -> code"
+  public_store_currencies }o--|| public_store : "store_id -> id"
+  public_store_currency }o--|| public_store : "store_id -> id"
+  public_swap }o--|| public_cart : "cart_id -> id"
+  public_swap }o--|| public_order : "order_id -> id"
+  public_swap }o--|| public_address : "shipping_address_id -> id"
+  public_tax_rate }o--|| public_tax_region : "tax_region_id -> id"
+  public_tax_rate_rule }o--|| public_tax_rate : "tax_rate_id -> id"
+  public_tax_region }o--|| public_tax_provider : "provider_id -> id"
+  public_tax_region }o--|| public_tax_region : "parent_id -> id"
+  public_tracking_link }o--|| public_fulfillment : "fulfillment_id -> id"

@@ -1,0 +1,427 @@
+/* Modern, beautiful global styles for loading and app backgrounds */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Tajawal:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables for shadcn/ui components */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+  }
+}
+
+body {
+  font-family: 'Cairo', 'Tajawal', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #e0e7ff 0%, #fff 50%, #c7d2fe 100%);
+  min-height: 100vh;
+  margin: 0;
+  color: #22223b;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+    background: linear-gradient(135deg, #f8fafc 0%, #fff 50%, #f1f5f9 100%);
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+/* Desktop optimizations */
+@media (min-width: 1025px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* Loading spinner enhancements */
+.loading-spinner {
+  border-top-color: #6366f1 !important;
+  border-right-color: #818cf8 !important;
+  border-bottom-color: #a5b4fc !important;
+  border-left-color: #e0e7ff !important;
+  box-shadow: 0 4px 24px 0 rgba(99,102,241,0.08);
+}
+
+/* Custom animations for loading page */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes float-delayed {  
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  33% {
+    transform: translateY(-8px) translateX(2px);
+  }
+  66% {
+    transform: translateY(2px) translateX(-2px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.6);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Loading card enhancements - responsive */
+.loading-card {
+  background: rgba(255,255,255,0.95) !important;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 40px rgba(99, 102, 241, 0.1) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem !important;
+  padding: 2rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  max-width: 400px !important;
+  width: 90% !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  margin: 0 auto !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Mobile-first design improvements */
+@media (max-width: 640px) {
+  /* Ensure minimum touch targets */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better form spacing on mobile */
+  .mobile-form {
+    padding: 1rem !important;
+    margin: 0.5rem !important;
+  }
+  
+  /* Improved button sizing */
+  button, .btn {
+    min-height: 48px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Better input sizing */
+  input, select, textarea {
+    min-height: 48px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Improved spacing for mobile */
+  .space-y-6 > * + * {
+    margin-top: 1rem !important;
+  }
+  
+  /* Loading card mobile optimization */
+  .loading-card {
+    padding: 1.5rem !important;
+    margin: 1rem !important;
+    max-width: calc(100vw - 2rem) !important;
+  }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .loading-card {
+    padding: 2rem !important;
+    max-width: 480px !important;
+  }
+}
+
+/* Large screens (desktop) */
+@media (min-width: 1025px) {
+  .loading-card {
+    padding: 2.5rem !important;
+    max-width: 400px !important;
+  }
+}
+
+/* Responsive utilities */
+.container-mobile {
+  @apply px-3 sm:px-6 lg:px-8;
+}
+
+.text-responsive {
+  @apply text-sm sm:text-base lg:text-lg;
+}
+
+.text-responsive-lg {
+  @apply text-lg sm:text-xl lg:text-2xl;
+}
+
+.text-responsive-xl {
+  @apply text-xl sm:text-2xl lg:text-3xl;
+}
+
+.text-responsive-2xl {
+  @apply text-2xl sm:text-3xl lg:text-4xl;
+}
+
+/* Button responsive sizes */
+.btn-responsive {
+  @apply px-3 py-2 text-sm sm:px-4 sm:py-2.5 sm:text-base;
+}
+
+.btn-responsive-lg {
+  @apply px-4 py-2.5 text-sm sm:px-6 sm:py-3 sm:text-base lg:px-8 lg:py-4 lg:text-lg;
+}
+
+/* Grid responsive utilities */
+.grid-responsive-1-2-3 {
+  @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
+}
+
+.grid-responsive-1-2 {
+  @apply grid-cols-1 sm:grid-cols-2;
+}
+
+/* Card responsive padding */
+.card-responsive {
+  @apply p-4 sm:p-6 lg:p-8;
+}
+
+.card-responsive-sm {
+  @apply p-3 sm:p-4 lg:p-6;
+}
+
+/* Mobile-first navigation improvements */
+.mobile-nav-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+/* Touch-friendly interactive elements */
+.touch-friendly {
+  @apply min-h-[44px] min-w-[44px];
+}
+
+/* Smooth scrolling for mobile */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar on mobile while keeping functionality */
+@media (max-width: 640px) {
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Responsive spacing utilities */
+.space-responsive {
+  @apply space-y-3 sm:space-y-4 lg:space-y-6;
+}
+
+.gap-responsive {
+  @apply gap-3 sm:gap-4 lg:gap-6;
+}
+
+.gap-responsive-lg {
+  @apply gap-4 sm:gap-6 lg:gap-8;
+}
+
+/* Modal responsive improvements */
+.modal-responsive {
+  @apply w-[95vw] max-w-md sm:w-full sm:max-w-lg lg:max-w-xl;
+}
+
+/* Form responsive improvements */
+.form-responsive {
+  @apply space-y-3 sm:space-y-4;
+}
+
+.input-responsive {
+  @apply px-3 py-2.5 text-sm sm:px-4 sm:py-3 sm:text-base;
+}
+
+/* Animation performance optimizations for mobile */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reduce animations on mobile for better performance */
+@media (max-width: 640px) {
+  * {
+    animation-duration: 0.2s !important;
+    transition-duration: 0.2s !important;
+  }
+}
+
+/* RTL Support for Arabic */
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+/* RTL-specific utilities */
+.rtl .space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+.rtl .divide-x-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-x-reverse: 1;
+}
+
+/* Arabic number formatting */
+.arabic-numbers {
+  font-variant-numeric: tabular-nums;
+  direction: ltr;
+  unicode-bidi: bidi-override;
+}
+
+/* Better Arabic text rendering */
+.arabic-text {
+  font-feature-settings: "liga" 1, "calt" 1, "kern" 1;
+  text-rendering: optimizeLegibility;
+}
+
+/* Store dashboard specific styles */
+.store-dashboard-card {
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #e5e7eb;
+}
+
+.store-dashboard-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+/* Status badge styles */
+.status-badge {
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  transition: all 0.15s ease-in-out;
+}
+
+/* Arabic currency alignment */
+.currency-sar {
+  direction: ltr;
+  unicode-bidi: embed;
+}

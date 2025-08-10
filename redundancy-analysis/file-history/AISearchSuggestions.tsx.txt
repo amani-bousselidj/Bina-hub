@@ -1,0 +1,29 @@
+File History Analysis for: AISearchSuggestions.tsx
+
+Generated: 08/05/2025 08:30:24
+
+
+
+=== src/core\shared\components\AISearchSuggestions.tsx ===
+Git History:
+407aa883 Fix landing page styling and restore platform functionality
+8509401c Fix TypeScript compilation errors and enhance UI components
+c1a12823 ظ£à Fix build errors and complete Arabic translation
+45db489a feat: comprehensive import system refactoring and build optimization
+f47735cc ╪ز╪╣╪»┘è┘╪د╪ز ┘â╪ذ┘è╪▒╪ر ╪╣┘┘ë ╪ز╪╡┘à┘è┘à ╪د┘┘à┘╪╡╪ر ┘ê╪ص╪░┘ ╪د┘┘à┘┘╪د╪ز ╪د┘┘à┘â╪▒╪▒╪ر
+
+Line count: 259
+
+Key imports:
+import { useState, useEffect, useCallback } from 'react';
+import { Search, TrendingUp, Clock, Star, ArrowRight } from 'lucide-react';
+import { supabase } from '@/lib/supabase/client';
+
+=== src/core\shared\components\search\AISearchSuggestions.tsx ===
+Git History:
+f47735cc ╪ز╪╣╪»┘è┘╪د╪ز ┘â╪ذ┘è╪▒╪ر ╪╣┘┘ë ╪ز╪╡┘à┘è┘à ╪د┘┘à┘╪╡╪ر ┘ê╪ص╪░┘ ╪د┘┘à┘┘╪د╪ز ╪د┘┘à┘â╪▒╪▒╪ر
+
+Line count: 173
+
+Key imports:
+import React, { useState, useEffect } from 'react';

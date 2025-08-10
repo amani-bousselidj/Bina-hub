@@ -1,0 +1,10 @@
+/* Fresh CSS file for testing */
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: Arial, sans-serif;
+}
+h1 {
+  font-size: 2rem;
+  color: #333333;
+}

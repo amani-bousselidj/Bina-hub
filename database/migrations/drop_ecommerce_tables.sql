@@ -1,0 +1,3 @@
+-- Renamed from drop_medusa_tables.sql
+-- Drops all ecommerce-related tables
+-- ...existing SQL content...

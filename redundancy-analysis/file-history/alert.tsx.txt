@@ -1,0 +1,17 @@
+File History Analysis for: alert.tsx
+
+Generated: 08/05/2025 08:30:26
+
+
+
+=== src/core\shared\components\ui\alert.tsx ===
+Git History:
+6ccaf260 ╪د╪│╪ز╪╣╪د╪»╪ر user dashboard/store dashboard ╪د┘╪┤┘â┘ ╪د┘╪ش┘à┘è┘ ┘à╪╣ login page and loading page
+f47735cc ╪ز╪╣╪»┘è┘╪د╪ز ┘â╪ذ┘è╪▒╪ر ╪╣┘┘ë ╪ز╪╡┘à┘è┘à ╪د┘┘à┘╪╡╪ر ┘ê╪ص╪░┘ ╪د┘┘à┘┘╪د╪ز ╪د┘┘à┘â╪▒╪▒╪ر
+7599a8db ┘╪│╪«╪ر ╪ش╪»┘è╪»╪ر ╪ذ╪╣╪» ┘à╪╣╪د┘╪ش╪ر ╪د┘┘à╪┤┘â┘ & successful build ┘ê┘à╪╣╪د┘╪ش╪ر ╪د┘┘à╪┤╪د┘â┘ ╪ذ╪╣╪» ╪د╪╢╪د┘╪ر ┘â╪د┘╪ر ╪د┘╪«╪»┘à╪د╪ز ╪د┘╪«╪د╪╡╪ر ╪ذ╪د┘┘à╪ز╪د╪ش╪▒ ┘ê╪د╪│╪ز╪╣╪د╪»╪ر ╪╡┘╪ص╪ر ╪د┘┘à╪│╪ز╪«╪»┘à
+
+Line count: 44
+
+Key imports:
+import * as React from "react";
+import { cn } from "@/lib/utils";

@@ -1,0 +1,7 @@
+Dependencies for ProjectForm (C:\Users\hp\BinnaCodes\binna\src\domains\user\projects\creation\ProjectForm.tsx):
+import { ProjectTrackingService } from '@/core/services/projectTrackingService';
+import { useAuth } from '@/core/shared/auth/AuthProvider';
+import React, { useState, useEffect } from 'react';
+
+Potentially imported by:
+C:\Users\hp\BinnaCodes\binna\src\domains\user\projects\UserProjectFlow.tsx

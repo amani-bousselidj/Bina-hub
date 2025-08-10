@@ -1,0 +1,191 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (commit .env and .env.example, ignore .env.local)
+.env.local
+.env.*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# ============================================
+# DEBUG AND TEMPORARY FILES (DO NOT COMMIT)
+# ============================================
+
+# Debug JavaScript/Node.js files
+test-*.js
+test-*.mjs
+debug-*.js
+debug-*.mjs
+
+# Debug and test directories
+src/app/auth-debug/
+src/app/loading-demo/
+src/app/mobile-test/
+src/app/test-loading/
+
+# Temporary deployment and fix scripts
+deploy-*.ps1
+deploy-*.sh
+setup-*.ps1
+setup-*.sh
+pre-commit-*.ps1
+
+# Temporary issue and debug files
+CLEANUP_BEFORE_COMMIT.md
+SUPABASE_CONNECTION_ISSUE.md
+URGENT_VERCEL_FIX.md
+verify-*.js
+check-*.js
+create-*.js
+create-*.mjs
+apply-*.js
+browser-*.js
+comprehensive-*.js
+comprehensive-*.mjs
+database-diagnostic.js
+db-manager.js
+quick-database-test.js
+final-projects-test.mjs
+
+# More specific test patterns
+*-test.js
+*-test.mjs
+*-test-*.js
+*-diagnostic.js
+*-verification.js
+*-fix.js
+*-fixes.js
+simple-*.js
+quick-*.js
+final-*.js
+list-*.js
+schema-*.js
+setup-*.js
+
+# Debug SQL files  
+database-schema*.sql
+CREATE_PROJECTS_TABLE.sql
+ADD_FOR_SALE_FEATURES.sql
+APPLY_FOR_SALE_SCHEMA.sql
+CHECK_EXISTING_TABLE_STRUCTURE.sql
+COMPLETE_DATABASE_SETUP.sql
+FIX_PROJECTS_TABLE_COMPATIBLE.sql
+create-*.sql
+apply-*.sql
+fix-*.sql
+migrations/*.sql
+supabase/migrations/*.sql
+src/migrations/*.sql
+
+# Debug HTML files
+debug-*.html
+test-*.html
+public/test-*.html
+public/debug-*.html
+public/*-test.html
+public/*-debug.html
+
+# Debug PowerShell scripts
+cleanup*.ps1
+create_project.ps1
+create-sample-project.ps1
+fix-*.ps1
+generate-*.ps1
+
+# Temporary documentation files
+*-FIX-*.md
+*-ERROR-*.md
+*_STATUS*.md
+*_FIXES_*.md
+*_IMPLEMENTATION_*.md
+*_INTEGRATION_*.md
+*_ENHANCEMENT_*.md
+*_MIGRATION_*.md
+AUTHENTICATION-*.md
+BUILD_STATUS.md
+DATABASE_*.md
+database-*.md
+FINAL*.md
+FIXES_*.md
+FOR_SALE_*.md
+IMPLEMENTATION_*.md
+LIVE_TESTING_*.md
+MANUAL_*.md
+PROJECT_*.md
+PROJECT-*.md
+PROJECTS_PAGE_*.md
+QUICK_SETUP_*.md
+SCHEMA_*.md
+FILES_TO_DELETE_*.md
+
+# Specific debug files and folders
+ershpBinnaCodesbinna*
+src/test-*.js
+src/debug-*.js
+public/project-*.html
+src/components/ProjectsDebugger.tsx
+
+# Keep important config files (exceptions)
+!next.config.js
+!tailwind.config.js
+!postcss.config.js
+!jest.config.js
+!jest.setup.js
+!eslint.config.js
+!prettier.config.js
+!.prettierrc.js
+
+# ============================================
+# PROTECTED DOCUMENTATION FILES (NEVER DELETE)
+# ============================================
+!PLATFORM_FEATURES_ROADMAP.md
+!CRITICAL_FEATURES_IMPLEMENTATION_PLAN.md
+!STORE_PAGES_GAP_ANALYSIS.md
+!CRITICAL_SUPABASE_RECOVERY.md
+!FINAL_STATUS_AND_NEXT_STEPS.md
+!FIXES_COMPLETED_STATUS.md
+!README.md
+!CHANGELOG.md
+
+# medusa backend (development/local only)
+medusa-develop/
+
+# page backup files (temporary development files)
+**/page-new.tsx
+
+# temporary files
+.nextignore

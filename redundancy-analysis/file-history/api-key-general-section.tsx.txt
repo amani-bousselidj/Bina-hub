@@ -1,0 +1,39 @@
+File History Analysis for: api-key-general-section.tsx
+
+Generated: 08/05/2025 08:30:30
+
+
+
+=== src/core\shared\components\api-key-general-section.tsx ===
+Git History:
+f47735cc ╪ز╪╣╪»┘è┘╪د╪ز ┘â╪ذ┘è╪▒╪ر ╪╣┘┘ë ╪ز╪╡┘à┘è┘à ╪د┘┘à┘╪╡╪ر ┘ê╪ص╪░┘ ╪د┘┘à┘┘╪د╪ز ╪د┘┘à┘â╪▒╪▒╪ر
+7599a8db ┘╪│╪«╪ر ╪ش╪»┘è╪»╪ر ╪ذ╪╣╪» ┘à╪╣╪د┘╪ش╪ر ╪د┘┘à╪┤┘â┘ & successful build ┘ê┘à╪╣╪د┘╪ش╪ر ╪د┘┘à╪┤╪د┘â┘ ╪ذ╪╣╪» ╪د╪╢╪د┘╪ر ┘â╪د┘╪ر ╪د┘╪«╪»┘à╪د╪ز ╪د┘╪«╪د╪╡╪ر ╪ذ╪د┘┘à╪ز╪د╪ش╪▒ ┘ê╪د╪│╪ز╪╣╪د╪»╪ر ╪╡┘╪ص╪ر ╪د┘┘à╪│╪ز╪«╪»┘à
+ff790f59 ╪ز╪ص╪│┘è┘╪د╪ز ┘â╪ذ┘è╪▒╪ر ┘┘┘à╪ز╪ش╪▒ ┘ê╪د╪╢╪د┘╪د╪ز ┘â╪س┘è╪▒╪ر
+c3f4b5cf ┘╪│╪«╪ر ╪ز┘à ╪ز┘┘é┘è╪ص┘ç╪د ┘ê╪ص╪░┘ ┘à╪╣ ╪ز╪ش┘à┘è╪╣ ╪د┘┘à┘┘╪د╪ز ┘ê╪ز┘ê╪ص┘è╪» ╪د┘┘à╪ش┘╪»╪د╪ز ┘┘┘à╪│╪ز╪«╪»┘à & ┘ê╪د┘┘à╪ز╪ش╪▒ ┘ê╪د┘╪ذ╪د┘â ╪ت╪ذ ┘ê ╪د┘╪╣╪د┘à
+2cd6f2f5 feat: Complete Medusa Community Edition integration into Binna platform
+
+Line count: 231
+
+Key imports:
+import { PencilSquare, Trash, XCircle } from "@medusajs/icons"
+import { ApiKeyDTO } from "@medusajs/types"
+import { useTranslation } from "react-i18next"
+import { useNavigate } from "react-router-dom"
+import { Skeleton } from "../../../common/skeleton"
+
+=== src/core\shared\components\api-key-general-section\api-key-general-section.tsx ===
+Git History:
+f47735cc ╪ز╪╣╪»┘è┘╪د╪ز ┘â╪ذ┘è╪▒╪ر ╪╣┘┘ë ╪ز╪╡┘à┘è┘à ╪د┘┘à┘╪╡╪ر ┘ê╪ص╪░┘ ╪د┘┘à┘┘╪د╪ز ╪د┘┘à┘â╪▒╪▒╪ر
+7599a8db ┘╪│╪«╪ر ╪ش╪»┘è╪»╪ر ╪ذ╪╣╪» ┘à╪╣╪د┘╪ش╪ر ╪د┘┘à╪┤┘â┘ & successful build ┘ê┘à╪╣╪د┘╪ش╪ر ╪د┘┘à╪┤╪د┘â┘ ╪ذ╪╣╪» ╪د╪╢╪د┘╪ر ┘â╪د┘╪ر ╪د┘╪«╪»┘à╪د╪ز ╪د┘╪«╪د╪╡╪ر ╪ذ╪د┘┘à╪ز╪د╪ش╪▒ ┘ê╪د╪│╪ز╪╣╪د╪»╪ر ╪╡┘╪ص╪ر ╪د┘┘à╪│╪ز╪«╪»┘à
+ff790f59 ╪ز╪ص╪│┘è┘╪د╪ز ┘â╪ذ┘è╪▒╪ر ┘┘┘à╪ز╪ش╪▒ ┘ê╪د╪╢╪د┘╪د╪ز ┘â╪س┘è╪▒╪ر
+c3f4b5cf ┘╪│╪«╪ر ╪ز┘à ╪ز┘┘é┘è╪ص┘ç╪د ┘ê╪ص╪░┘ ┘à╪╣ ╪ز╪ش┘à┘è╪╣ ╪د┘┘à┘┘╪د╪ز ┘ê╪ز┘ê╪ص┘è╪» ╪د┘┘à╪ش┘╪»╪د╪ز ┘┘┘à╪│╪ز╪«╪»┘à & ┘ê╪د┘┘à╪ز╪ش╪▒ ┘ê╪د┘╪ذ╪د┘â ╪ت╪ذ ┘ê ╪د┘╪╣╪د┘à
+2cd6f2f5 feat: Complete Medusa Community Edition integration into Binna platform
+
+Line count: 231
+
+Key imports:
+import { PencilSquare, Trash, XCircle } from "@medusajs/icons"
+import { ApiKeyDTO } from "@medusajs/types"
+import { useTranslation } from "react-i18next"
+import { useNavigate } from "react-router-dom"
+import { Skeleton } from "../../../../../components/common/skeleton"

@@ -1,0 +1,33 @@
+<!-- Setup Auth Cookie -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Setup Auth Cookie</title>
+</head>
+<body>
+    <h1>Setting up Authentication Cookie</h1>
+    <p>Click the button to set up demo authentication:</p>
+    <button onclick="setupAuth()">Setup Demo Auth</button>
+    <p id="status"></p>
+
+    <script>
+    function setupAuth() {
+        const authUser = {
+            id: 'user-123',
+            name: 'مستخدم تجريبي',
+            email: 'user@binna.com',
+            role: 'user'
+        };
+        
+        const cookieValue = encodeURIComponent(JSON.stringify(authUser));
+        document.cookie = `temp_auth_user=${cookieValue}; path=/; max-age=86400`;
+        
+        document.getElementById('status').innerHTML = '✅ Auth cookie set! Redirecting to dashboard...';
+        
+        setTimeout(() => {
+            window.location.href = '/user/dashboard';
+        }, 1000);
+    }
+    </script>
+</body>
+</html>

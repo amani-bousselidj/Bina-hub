@@ -1,0 +1,11 @@
+Dependencies for UserProfile (C:\Users\hp\BinnaCodes\binna\src\core\shared\components\UserProfileForm.tsx):
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import { EnhancedInput, EnhancedSelect, Button } from '@/core/shared/components/ui/enhanced-components';
+import { useState, useEffect } from 'react';
+
+Potentially imported by:
+C:\Users\hp\BinnaCodes\binna\src\app\user\settings\page.tsx
+C:\Users\hp\BinnaCodes\binna\src\domains\user\repositories\UserRepository.ts
+C:\Users\hp\BinnaCodes\binna\src\domains\user\services\UserService.ts
+C:\Users\hp\BinnaCodes\binna\src\services\UserDataSyncService.ts
+C:\Users\hp\BinnaCodes\binna\src\services\UserStatsCalculator.ts
